@@ -1,0 +1,60 @@
+<%- include("../header"); %>
+<div class="col-12">
+  <h1>Editar producto</h1>
+  <form method="post" action="/profesor/actualizar">
+    <input value="<%= profesor.doc_id %>" name="doc_id" type="hidden" />
+    <div class="form-group">
+      <label for="nombre_completo">nombre</label>
+      <input
+        value="<%= profesor.nombre_completo %>"
+        required
+        id="nombre_completo"
+        placeholder="Nombre del profesor"
+        class="form-control"
+        type="text"
+        name="nombre_completo"
+      />
+    </div>
+    <div class="form-group">
+      <label for="email">email</label>
+      <input
+        value="<%= profesor.email %>"
+        required
+        id="email"
+        placeholder="Email del profesor"
+        class="form-control"
+        type="text"
+        name="email"
+      />
+    </div>
+    <div class="form-group">
+      <label for="telefono">telefono</label>
+      <input
+        value="<%= profesor.telefono %>"
+        required
+        id="telefono"
+        placeholder="Telefono del profesor"
+        class="form-control"
+        type="text"
+        name="telefono"
+      />
+    </div>
+    <div class="form-group">
+      <label for="contraseña">contraseña</label>
+      <input
+        value="<%= profesor.contrasena %>"
+        required
+        id="contrasena"
+        placeholder="Contraseña del profesor"
+        class="form-control"
+        type="text"
+        name="contrasena"
+      />
+    </div>
+    <div class="form-group">
+      <button class="btn btn-success">Guardar</button>
+      &nbsp;<a href="/profesor" class="btn btn-primary">Volver</a>
+    </div>
+  </form>
+</div>
+<%- include("../footer"); %>
