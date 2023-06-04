@@ -100,4 +100,60 @@ app.delete("/StudentDelete/:id", async (request, response) => {
   }
 });
 
+//URIS para Courses
+
+app.get("/Courses", async (request, response) => {
+  const courses = await nodoModel.Course.find({});
+
+  try {
+    response.send(courses);
+  } catch (error) {
+    response.status(500).send(error);
+  }
+});
+
+app.post("/CourseInsert", async (request, response) => {
+  const course = new nodoModel.Course(request.body);
+
+  try {
+    await course.save();
+    response.send(course);
+  } catch (error) {
+    response.status(500).send(error);
+  }
+});
+
+app.patch("/CourseUpdate/:id", async (request, response) => {
+  try {
+    const course = new nodoModel.Course(request.body);
+    await nodoModel.Course.findByIdAndUpdate(request.params.id, request.body);
+    await nodoModel.Course.save();
+    response.send(course);
+  } catch (error) {
+    response.status(500).send(error);
+  }
+});
+
+app.patch("/CourseUpdate/:id", async (request, response) => {
+  try {
+    const course = new nodoModel.Course(request.body);
+    await nodoModel.Course.findByIdAndUpdate(request.params.id, request.body);
+    await nodoModel.Course.save();
+    response.send(course);
+  } catch (error) {
+    response.status(500).send(error);
+  }
+});
+
+app.delete("/CourseDelete/:id", async (request, response) => {
+  try {
+    const course = await nodoModel.Course.findByIdAndDelete(request.params.id);
+
+    if (!course) response.status(404).send("No course found");
+    response.status(200).send();
+  } catch (error) {
+    response.status(500).send(error);
+  }
+});
+
 module.exports = app;
