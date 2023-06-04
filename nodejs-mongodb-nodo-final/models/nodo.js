@@ -13,6 +13,7 @@ const TeacherSchema = new mongoose.Schema({
 
 const CourseSchema = new mongoose.Schema({
   _id: Number,
+  nombre: String,
   URL: String,
   price: Number,
   teacherID: { type: Schema.Types.ObjectId, ref: "Teacher" },
