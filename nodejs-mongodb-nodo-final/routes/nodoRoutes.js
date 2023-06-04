@@ -29,7 +29,7 @@ app.post("/insert", async (request, response) => {
 });
 
 // URI: /nodo/actualizar/{id}
-/*app.patch("/update/:id", async (request, response) => {
+app.patch("/update/:id", async (request, response) => {
   try {
     const teacher = new nodoModel.Teacher(request.body);
     await nodoModel.Teacher.findByIdAndUpdate(request.params.id, request.body);
@@ -52,5 +52,5 @@ app.delete("/eliminar/:id", async (request, response) => {
     response.status(500).send(error);
   }
 });
-*/
+
 module.exports = app;
