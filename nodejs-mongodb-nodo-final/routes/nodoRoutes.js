@@ -134,17 +134,6 @@ app.patch("/CourseUpdate/:id", async (request, response) => {
   }
 });
 
-app.patch("/CourseUpdate/:id", async (request, response) => {
-  try {
-    const course = new nodoModel.Course(request.body);
-    await nodoModel.Course.findByIdAndUpdate(request.params.id, request.body);
-    await nodoModel.Course.save();
-    response.send(course);
-  } catch (error) {
-    response.status(500).send(error);
-  }
-});
-
 app.delete("/CourseDelete/:id", async (request, response) => {
   try {
     const course = await nodoModel.Course.findByIdAndDelete(request.params.id);
