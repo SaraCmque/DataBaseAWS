@@ -52,6 +52,5 @@ app.delete("/eliminar/:id", async (request, response) => {
     response.status(500).send(error);
   }
 });
-
-module.exports = app;
 */
+module.exports = app;
