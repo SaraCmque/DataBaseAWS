@@ -1,0 +1,27 @@
+<%- include("../header"); %>
+<div class="col-12">
+  <h1>Cursos</h1>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>id_curso</th>
+        <th>nombre</th>
+        <th>categoria</th>
+        <th>fecha_inicio</th>
+        <th>fecha_fin</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% curso.forEach(curso=> { %>
+      <tr>
+        <td><%= curso.id_curso %></td>
+        <td><%= curso.nombre %></td>
+        <td><%= curso.categoria %></td>
+        <td><%= curso.fecha_inicio %></td>
+        <td><%= curso.fecha_fin %></td>
+      </tr>
+      <% })%>
+    </tbody>
+  </table>
+</div>
+<%- include("../footer"); %>
