@@ -47,7 +47,7 @@ router.get("/editar/:doc_id", function (req, res, next) {
   profesorModel
     .obtenerPorId(req.params.doc_id)
     .then((profesor) => {
-      if (Profesor) {
+      if (profesor) {
         res.render("profesor/editar", {
           profesor: profesor,
         });
