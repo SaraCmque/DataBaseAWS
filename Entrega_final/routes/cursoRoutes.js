@@ -7,7 +7,7 @@ router.get("/", function (req, res, next) {
   cursoModel
     .obtener()
     .then((curso) => {
-      res.render("cursos/ver", {
+      res.render("curso/ver", {
         curso: curso,
       });
     })
