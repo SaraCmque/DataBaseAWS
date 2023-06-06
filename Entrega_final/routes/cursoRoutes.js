@@ -1,10 +1,10 @@
 const express = require("express");
 const router = express.Router();
 
-const profesorModel = require("../models/cursos");
+const cursoModel = require("../models/cursos");
 
 router.get("/", function (req, res, next) {
-  profesorModel
+  cursoModel
     .obtener()
     .then((curso) => {
       res.render("cursos/ver", {
