@@ -16,9 +16,9 @@ router.get("/", function (req, res, next) {
     });
 });
 
-router.get("/verInfoCurso/:id_curso", function (req, res, next) {
+router.get("/verInfoCurso/:id_info", function (req, res, next) {
   cursoModel
-    .obtenerDetalles(req.params.id_curso)
+    .obtenerDetalles(req.params.id_info)
     .then((curso) => {
       res.render("curso/verInfoCurso", {
         curso: curso,
