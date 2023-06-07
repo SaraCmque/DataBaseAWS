@@ -5,7 +5,6 @@
     <thead>
       <tr>
         <th>ID curso</th>
-        <th>Info</th>
         <th>Info clase</th>
         <th>Nombre</th>
         <th>Categoria</th>
@@ -17,7 +16,6 @@
       <% curso.forEach(curso=> { %>
       <tr>
         <td><%= curso.id_curso %></td>
-        <td><%= curso.id_info %></td>
         <td><a href="/cursos/verInfoCurso/<%= curso.id_info %>"><%= curso.id_info %></td>
         <td><%= curso.nombre %></td>
         <td><%= curso.categoria %></td>
