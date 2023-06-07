@@ -18,7 +18,7 @@ router.get("/", function (req, res, next) {
 
 router.get("/verInfoCurso/:id_info", function (req, res, next) {
   cursoModel
-    .obtenerPorId(req.params.doc_id)
+    .obtenerDetalles(req.params.doc_id)
     .then((curso) => {
       if (curso) {
         res.render("cursos/verInfoCurso", {
