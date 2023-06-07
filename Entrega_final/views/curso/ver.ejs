@@ -14,7 +14,7 @@
     <tbody>
       <% curso.forEach(curso=> { %>
       <tr>
-        <td><%= curso.id_curso %></td>
+        <td><a href="/curso/verInfo/<%= curso.id_curso %>"><%= curso.id_curso %></td>
         <td><%= curso.nombre %></td>
         <td><%= curso.categoria %></td>
         <td><%= curso.fecha_inicio %></td>
