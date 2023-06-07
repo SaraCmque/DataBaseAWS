@@ -16,9 +16,9 @@ module.exports = {
   obtenerDetalles(id_curso) {
     return new Promise((resolve, reject) => {
       conexion.query(
-        `select distinct c.precio, c.url, pc.año, pc.semestre, p.nombre_completo from nodo_entrega4.curso c inner join nodo_entrega4.info_curso
-        ic on c.id_curso = ic.id_curso inner join nodo_entrega4.profesor_curso pc on c.id_curso = pc.id_curso
-        inner join nodo_entrega4.profesor p on pc.doc_id = p.doc_id where ic.id_info = ?`,
+        `select distinct c.id_curso, ic.id_info, c.precio, c.url, pc.año, pc.semestre, p.nombre_completo from nodo_entrega4.curso c inner join nodo_entrega4.info_curso
+ic on c.id_curso = ic.id_curso inner join nodo_entrega4.profesor_curso pc on c.id_curso = pc.id_curso
+inner join nodo_entrega4.profesor p on pc.doc_id = p.doc_id where ic.id_info = ?`,
         [id_curso],
         (err, resultados) => {
           if (err) reject(err);
