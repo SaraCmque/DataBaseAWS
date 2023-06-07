@@ -17,15 +17,17 @@ router.get("/", function (req, res, next) {
 });
 
 router.get("/verInfoCurso/:id_info", function (req, res, next) {
-  cursoModel
-    .obtenerDetalles(req.params.id_info)
+  profesorModel
+    .obtenerPorId(req.params.doc_id)
     .then((curso) => {
-      res.render("curso/verInfoCurso", {
-        curso: curso,
-      });
+      if (curso) {
+        res.render("cursos/verInfoCurso", {
+          curso: curso,
+        });
+      }
     })
     .catch((err) => {
-      return res.status(500).send("Error obteniendo Detalles");
+      return res.status(500).send("Error obteniendo Clase");
     });
 });
 
