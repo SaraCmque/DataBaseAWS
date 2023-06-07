@@ -4,7 +4,8 @@
   <table class="table table-bordered">
     <thead>
       <tr>
-        <th>ID del curso</th>
+        <th>ID curso</th>
+        <th>Info clase</th>
         <th>Nombre</th>
         <th>Categoria</th>
         <th>Fecha de inicio</th>
@@ -14,7 +15,8 @@
     <tbody>
       <% curso.forEach(curso=> { %>
       <tr>
-        <td><a href="/cursos/verInfoCurso/<%= curso.id_curso %>"><%= curso.id_curso %></td>
+        <td><%= curso.id_curso %></td>
+        <td><a href="/cursos/verInfoCurso/<%= curso.id_info %>"><%= curso.id_info %></td>
         <td><%= curso.nombre %></td>
         <td><%= curso.categoria %></td>
         <td><%= curso.fecha_inicio %></td>
