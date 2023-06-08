@@ -21,7 +21,7 @@ router.get("/verInfoCurso/:id_info", function (req, res, next) {
     .obtenerDetalles(req.params.id_info)
     .then((curso) => {
       if (curso) {
-        res.render("cursos/verInfoCurso", {
+        res.render("curso/verInfoCurso", {
           curso: curso,
         });
       }
