@@ -16,7 +16,7 @@ router.get("/", function (req, res, next) {
     });
 });
 
-router.get("/verInfoCurso/:id_info", function (req, res, next) {
+router.get("/verinfocurso/:id_info", function (req, res, next) {
   cursoModel
     .obtenerDetalles(req.params.id_info)
     .then((curso) => {
