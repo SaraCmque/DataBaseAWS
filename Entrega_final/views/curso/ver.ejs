@@ -19,8 +19,8 @@
         <td><a href="/cursos/verInfoCurso/<%= curso.id_info %>"><%= curso.id_info %></td>
         <td><%= curso.nombre %></td>
         <td><%= curso.categoria %></td>
-        <td><%= curso.fecha_inicio %></td>
-        <td><%= curso.fecha_fin %></td>
+        <td><%= curso.fecha_inicio.toLocaleDateString('Es-es', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' }) %></td>
+        <td><%= curso.fecha_fin.toLocaleDateString('Es-es', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' }) %></td>
       </tr>
       <% })%>
     </tbody>
