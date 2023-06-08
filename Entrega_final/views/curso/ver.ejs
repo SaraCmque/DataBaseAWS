@@ -16,7 +16,7 @@
       <% curso.forEach(curso=> { %>
       <tr>
         <td><%= curso.id_curso %></td>
-        <td><a href="/cursos/verInfoCurso/<%= curso.id_info %>"><%= curso.id_info %></td>
+        <td><a href="/curso/verinfocurso/<%= curso.id_info %>"><%= curso.id_info %></td>
         <td><%= curso.nombre %></td>
         <td><%= curso.categoria %></td>
         <td><%= curso.fecha_inicio.toLocaleDateString('Es-es', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' }) %></td>
