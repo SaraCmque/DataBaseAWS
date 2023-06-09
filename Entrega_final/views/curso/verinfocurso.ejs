@@ -40,5 +40,26 @@
       <% })%>
     </tbody>
   </table>
+  <h1>Listado de Tareas</h1>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Nombre tarea</th>
+        <th>Descripcion</th>
+        <th>Fecha de Entrega</th>
+        <th>Archivo</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% tarea.forEach(tarea=> { %>
+      <tr>
+        <td><%= tarea.nombre_tarea %></td>
+        <td><%= tarea.descripcion %></td>
+        <td><%= tarea.fecha_entrega %></td>
+        <td><%= tarea.archivo %></td>
+      </tr>
+      <% })%>
+    </tbody>
+  </table>
 </div>
 <%- include("../footer"); %>
