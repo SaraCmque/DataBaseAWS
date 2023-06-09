@@ -38,7 +38,10 @@ id_foro INT not null auto_increment primary key,
 nombre VARCHAR(20) NOT NULL,
 descripcion TEXT NOT NULL,
 fecha_creacion DATE NOT NULL,
-fecha_terminacion DATE
+fecha_terminacion DATE,
+id_info int not null,
+	FOREIGN KEY (id_info) REFERENCES info_curso(id_info)
+	ON UPDATE CASCADE ON DELETE RESTRICT
 );
 
 create table mensaje(
@@ -282,16 +285,20 @@ select* from profesor_curso;
 
 insert into administrador(nombre_completo, email, contrasena) values("fernando rodriguez gutierrez", "fernando@gmail.com","adminfrg");
 
-insert into foro(nombre, descripcion, fecha_creacion, fecha_terminacion) 
-	values("noticias", "aquí se compartirá información importante sobre el curso","2022-01-16", "2022-05-31");
-insert into foro(nombre, descripcion, fecha_creacion, fecha_terminacion) 
-	values("preguntas", "en este espacio podrán hacer preguntas sobre temas del curso y entre todos podemos ayudar","2023-02-23", "2023-04-20");
-insert into foro(nombre, descripcion, fecha_creacion, fecha_terminacion) 
-	values("eventos", "aquí se estará publicando información sobre próximas actividades como conferencias y charlas que les podrían interesar","2023-03-25", "2022-06-01");
-insert into foro(nombre, descripcion, fecha_creacion, fecha_terminacion) 
-	values("recursos", "en este foro cualquiera puede compartir enlaces de libros o videos útiles para el aprendizaje durante el curso","2023-01-01", "2023-05-31");
-insert into foro(nombre, descripcion, fecha_creacion, fecha_terminacion) 
-	values("proyecto final", "pueden escribir todas sus preguntas acerca del proyecto final y se responderán en este espacio","2022-01-16", "2022-05-31");    
+insert into foro(nombre, descripcion, fecha_creacion, fecha_terminacion, id_info) 
+	values("noticias", "aquí se compartirá información importante sobre el curso","2022-01-16", "2022-05-31", 1);
+insert into foro(nombre, descripcion, fecha_creacion, fecha_terminacion, id_info) 
+	values("preguntas", "en este espacio podrán hacer preguntas sobre temas del curso y entre todos podemos ayudar","2023-02-23", "2023-04-20", 2);
+insert into foro(nombre, descripcion, fecha_creacion, fecha_terminacion, id_info) 
+	values("eventos", "aquí se estará publicando información sobre próximas actividades como conferencias y charlas que les podrían interesar","2023-03-25", "2022-06-01", 3);
+insert into foro(nombre, descripcion, fecha_creacion, fecha_terminacion, id_info) 
+	values("recursos", "en este foro cualquiera puede compartir enlaces de libros o videos útiles para el aprendizaje durante el curso","2023-01-01", "2023-05-31", 4);
+insert into foro(nombre, descripcion, fecha_creacion, fecha_terminacion, id_info) 
+	values("proyecto final", "pueden escribir todas sus preguntas acerca del proyecto final y se responderán en este espacio","2022-01-16", "2022-05-31", 5);    
+insert into foro(nombre, descripcion, fecha_creacion, fecha_terminacion, id_info) 
+	values("noticias", "aquí se compartirá información importante sobre el curso","2022-01-16", "2022-05-31", 6);
+insert into foro(nombre, descripcion, fecha_creacion, fecha_terminacion, id_info) 
+	values("eventos", "aquí se estará publicando información sobre próximas actividades como conferencias y charlas que les podrían interesar","2023-03-25", "2022-06-01", 7);
     
     
 insert into tarea(nombre_tarea, descripcion, fecha_creacion, fecha_entrega, puntaje, archivo, doc_id, id_curso, id_info) 
