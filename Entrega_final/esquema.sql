@@ -84,11 +84,13 @@ create table registro_estu(
 id_registro int not null auto_increment primary key,
 fecha_registro DATE NOT NULL,
 id_curso int not null,
+id_info int not null,
 id_estudiante int not null,
     FOREIGN KEY (id_curso) REFERENCES curso(id_curso)
     ON UPDATE CASCADE ON DELETE RESTRICT,
     FOREIGN KEY (id_estudiante) REFERENCES estudiante (id_estudiante)
-	ON UPDATE CASCADE ON DELETE RESTRICT
+	ON UPDATE CASCADE ON DELETE RESTRICT,
+    FOREIGN KEY (id_info) REFERENCES info_curso(id_info)
 );
 
 
@@ -198,7 +200,7 @@ FOREIGN KEY (id_curso) REFERENCES curso(id_curso)
 
 create user "dbuser"@"%" identified with mysql_native_password BY "Eafit2023.";
 
-grant all privileges on tienda.* to "dbuser"@"%";
+grant all privileges on nodo_entrega3.* to "dbuser"@"%";
 flush privileges;
 
 insert into usuario(ref_bancaria) values('13457');
@@ -225,17 +227,17 @@ insert into curso(nombre, url, precio) values('Contabilidad 1','www.curso3.com',
 insert into curso(nombre, url, precio) values('Bases de Datos','www.curso4.com', 400000);
 insert into curso(nombre, url, precio) values('Historia','www.curso5.com', 500000);
 
-insert into registro_estu(fecha_registro, id_curso, id_estudiante) values('2022-02-03', 1, 2);
-insert into registro_estu(fecha_registro, id_curso, id_estudiante) values('2022-02-03', 1, 1);
-insert into registro_estu(fecha_registro, id_curso, id_estudiante) values('2023-02-04', 2, 1);
-insert into registro_estu(fecha_registro, id_curso, id_estudiante) values('2022-02-05', 3, 2);
-insert into registro_estu(fecha_registro, id_curso, id_estudiante) values('2023-02-06', 4, 2);
-insert into registro_estu(fecha_registro, id_curso, id_estudiante) values('2022-02-10', 5, 3);
-insert into registro_estu(fecha_registro, id_curso, id_estudiante) values('2023-01-08', 2, 3);
-insert into registro_estu(fecha_registro, id_curso, id_estudiante) values('2022-02-11', 1, 4);
-insert into registro_estu(fecha_registro, id_curso, id_estudiante) values('2023-03-12', 3, 4);
-insert into registro_estu(fecha_registro, id_curso, id_estudiante) values('2022-01-06', 4, 5);
-insert into registro_estu(fecha_registro, id_curso, id_estudiante) values('2023-02-15', 5, 5);
+insert into registro_estu(fecha_registro, id_curso, id_estudiante, id_info) values('2022-02-03', 1, 2, 1);
+insert into registro_estu(fecha_registro, id_curso, id_estudiante, id_info) values('2022-02-03', 1, 1, 1);
+insert into registro_estu(fecha_registro, id_curso, id_estudiante, id_info) values('2023-02-04', 2, 1, 2);
+insert into registro_estu(fecha_registro, id_curso, id_estudiante, id_info) values('2022-02-05', 3, 2, 3);
+insert into registro_estu(fecha_registro, id_curso, id_estudiante, id_info) values('2023-02-06', 4, 2, 4);
+insert into registro_estu(fecha_registro, id_curso, id_estudiante, id_info) values('2022-02-10', 5, 3, 6);
+insert into registro_estu(fecha_registro, id_curso, id_estudiante, id_info) values('2023-01-08', 2, 3, 2);
+insert into registro_estu(fecha_registro, id_curso, id_estudiante, id_info) values('2022-02-11', 1, 4, 1);
+insert into registro_estu(fecha_registro, id_curso, id_estudiante, id_info) values('2023-03-12', 3, 4, 3);
+insert into registro_estu(fecha_registro, id_curso, id_estudiante, id_info) values('2022-01-06', 4, 5, 5);
+insert into registro_estu(fecha_registro, id_curso, id_estudiante, id_info) values('2023-02-15', 5, 5, 7);
 
 select* from registro_estu;
 
