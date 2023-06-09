@@ -110,9 +110,12 @@ puntaje NUMERIC(2,0) NOT NULL,
 archivo VARCHAR(30) NOT NULL,
 doc_id VARCHAR(12) not null,
 id_curso int not null,
+id_info int not null,
     FOREIGN KEY (doc_id) REFERENCES profesor (doc_id)
     ON UPDATE CASCADE ON DELETE RESTRICT,
     FOREIGN KEY (id_curso) REFERENCES curso (id_curso)
+    ON UPDATE CASCADE ON DELETE RESTRICT,
+	FOREIGN KEY (id_info) REFERENCES info_curso (id_info)
     ON UPDATE CASCADE ON DELETE RESTRICT
 );
 
@@ -291,14 +294,20 @@ insert into foro(nombre, descripcion, fecha_creacion, fecha_terminacion)
 	values("proyecto final", "pueden escribir todas sus preguntas acerca del proyecto final y se responderán en este espacio","2022-01-16", "2022-05-31");    
     
     
-insert into tarea(nombre_tarea, descripcion, fecha_creacion, fecha_entrega, puntaje, archivo, doc_id, id_curso) 
-	values("taller de javascript", "entregar el taller finalizado hasta antes de la media noche", "2022-04-15", "2022-04-15", "10", "taller3.js", 123469870, 1);
-insert into tarea(nombre_tarea, descripcion, fecha_creacion, fecha_entrega, puntaje, archivo, doc_id, id_curso) 
-	values("ensayo", "subir su ensayo acerca del texto aportado", "2023-02-11", "2023-02-15", "5", "ensayo.docx", 123469871, 2);
-insert into tarea(nombre_tarea, descripcion, fecha_creacion, fecha_entrega, puntaje, archivo, doc_id, id_curso) 
-	values("bonus", "entregar los ejercicios resueltos para una bonificación", "2022-05-10", "2022-05-15", "5", "bonus.pdf", 123469872, 3);
-insert into tarea(nombre_tarea, descripcion, fecha_creacion, fecha_entrega, puntaje, archivo, doc_id, id_curso)values("taller de repaso", "adjuntar el taller de repaso solucionado",
- "2022-05-10", "2022-05-15", "5", "taller.pdf", 123469870, 1);
+insert into tarea(nombre_tarea, descripcion, fecha_creacion, fecha_entrega, puntaje, archivo, doc_id, id_curso, id_info) 
+	values("taller de javascript", "entregar el taller finalizado hasta antes de la media noche", "2022-04-15", "2022-04-15", "10", "taller3.js", 123469870, 1, 1);
+insert into tarea(nombre_tarea, descripcion, fecha_creacion, fecha_entrega, puntaje, archivo, doc_id, id_curso, id_info) 
+	values("ensayo", "subir su ensayo acerca del texto aportado", "2023-02-11", "2023-02-15", "5", "ensayo.docx", 123469870, 2, 2);
+insert into tarea(nombre_tarea, descripcion, fecha_creacion, fecha_entrega, puntaje, archivo, doc_id, id_curso, id_info) 
+	values("bonus", "entregar los ejercicios resueltos para una bonificación", "2022-05-10", "2022-05-15", "5", "bonus.pdf", 123469871, 3, 3);
+insert into tarea(nombre_tarea, descripcion, fecha_creacion, fecha_entrega, puntaje, archivo, doc_id, id_curso, id_info)
+	values("taller de repaso", "adjuntar el taller de repaso solucionado", "2023-05-10", "2022-05-15", "5", "taller.pdf", 123469872, 4, 4);
+insert into tarea(nombre_tarea, descripcion, fecha_creacion, fecha_entrega, puntaje, archivo, doc_id, id_curso, id_info)
+	values("taller.py", "adjuntar los ejercicios solucionados", "2022-05-10", "2022-05-15", "5", "taller.py", 123469872, 4, 5);
+insert into tarea(nombre_tarea, descripcion, fecha_creacion, fecha_entrega, puntaje, archivo, doc_id, id_curso, id_info)
+	values("taller de repaso", "adjuntar el taller de repaso solucionado", "2022-05-10", "2022-05-15", "5", "taller.pdf", 123469873, 5, 6);
+insert into tarea(nombre_tarea, descripcion, fecha_creacion, fecha_entrega, puntaje, archivo, doc_id, id_curso, id_info)
+	values("taller de repaso", "adjuntar el taller de repaso solucionado", "2022-05-10", "2022-05-15", "5", "taller.pdf", 123469873, 5, 7);
     
 insert into material(nombre_archivo, descripcion, fecha_creacion, puntaje, doc_id, id_curso, id_info) 
 	values("codigoejemplo.sql", "guía para la resolución del ejercicio", "2022-03-10", "5", "123469870", 1, 1);
