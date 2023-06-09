@@ -4,8 +4,8 @@ const router = express.Router();
 const cursoModel = require("../models/cursos");
 const estudianteModel = require("../models/cursos");
 const tareaModel = require("../models/cursos");
-const materialModel = require("../models/cursos");
-const foroModel = require("../models/cursos");
+//const materialModel = require("../models/cursos");
+//const foroModel = require("../models/cursos");
 
 router.get("/", function (req, res, next) {
   cursoModel
@@ -56,16 +56,16 @@ router.get("/verinfocurso/:id_info", function (req, res, next) {
     cursoModel.obtenerDetalles(id_info),
     estudianteModel.obtenerEstudiantes(id_info),
     tareaModel.obtenerTareas(id_info),
-    materialModel.obtenerMateriales(id_info),
-    foroModel.obtenerForos(id_info),
+    //materialModel.obtenerMateriales(id_info),
+    //foroModel.obtenerForos(id_info),
   ])
     .then(([curso, estudiante]) => {
       res.render("curso/verinfocurso", {
         curso: curso,
         estudiante: estudiante,
         tarea: tarea,
-        material: material,
-        foro: foro,
+        //material: material,
+        //foro: foro,
       });
     })
     .catch((err) => {
