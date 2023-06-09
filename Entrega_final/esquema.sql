@@ -121,12 +121,15 @@ id_archivo int not null auto_increment primary key,
 nombre_archivo VARCHAR(30) NOT NULL,
 descripcion TEXT NOT NULL,
 fecha_creacion DATE NOT NULL,
+id_info int not null,
 id_curso int not null,
 puntaje NUMERIC(2,0) NOT NULL,
 doc_id VARCHAR(12) not null,
     FOREIGN KEY (doc_id) REFERENCES profesor (doc_id)
     ON UPDATE CASCADE ON DELETE RESTRICT,
-    FOREIGN KEY (id_curso) REFERENCES curso (id_curso)
+    FOREIGN KEY (id_info) REFERENCES info_curso (id_info)
+    ON UPDATE CASCADE ON DELETE RESTRICT,
+	FOREIGN KEY (id_curso) REFERENCES curso (id_curso)
     ON UPDATE CASCADE ON DELETE RESTRICT
     
 );
@@ -297,12 +300,20 @@ insert into tarea(nombre_tarea, descripcion, fecha_creacion, fecha_entrega, punt
 insert into tarea(nombre_tarea, descripcion, fecha_creacion, fecha_entrega, puntaje, archivo, doc_id, id_curso)values("taller de repaso", "adjuntar el taller de repaso solucionado",
  "2022-05-10", "2022-05-15", "5", "taller.pdf", 123469870, 1);
     
-insert into material(nombre_archivo, descripcion, fecha_creacion, puntaje, doc_id, id_curso) 
-	values("codigoejemplo.sql", "guía para la resolución del ejercicio", "2022-03-10", "5", "123469870", 1);
-insert into material(nombre_archivo, descripcion, fecha_creacion, puntaje, doc_id, id_curso) 
-	values("diapositivas.pdf", "presentación del tema nuevo", "2023-02-18", "5", "123469872", 4);
-insert into material(nombre_archivo, descripcion, fecha_creacion, puntaje, doc_id, id_curso) 
-	values("documento.docx", "lectura útil para la próxima sesión", "2022-04-01", "5", "123469873", 5);
+insert into material(nombre_archivo, descripcion, fecha_creacion, puntaje, doc_id, id_curso, id_info) 
+	values("codigoejemplo.sql", "guía para la resolución del ejercicio", "2022-03-10", "5", "123469870", 1, 1);
+insert into material(nombre_archivo, descripcion, fecha_creacion, puntaje, doc_id, id_curso, id_info) 
+	values("libro.pdf", "libro de física", "2023-04-14", "5", "123469870", 2, 2);
+insert into material(nombre_archivo, descripcion, fecha_creacion, puntaje, doc_id, id_curso, id_info) 
+	values("ventas.xlsx", "registro de ventas", "2023-05-20", "5", "123469871", 3, 3);
+insert into material(nombre_archivo, descripcion, fecha_creacion, puntaje, doc_id, id_curso, id_info) 
+	values("ejercicio.py", "taller 1", "2023-06-04", "5", "123469872", 4, 4);
+insert into material(nombre_archivo, descripcion, fecha_creacion, puntaje, doc_id, id_curso, id_info) 
+	values("taller.java", "taller 2", "2022-07-13", "5", "123469872", 4, 5);
+insert into material(nombre_archivo, descripcion, fecha_creacion, puntaje, doc_id, id_curso, id_info) 
+	values("diapositivas.pdf", "presentación del tema nuevo", "2023-03-18", "5", "123469873", 5, 6);
+insert into material(nombre_archivo, descripcion, fecha_creacion, puntaje, doc_id, id_curso, id_info) 
+	values("documento.docx", "lectura para la próxima sesión", "2022-04-01", "5", "123469873", 5, 7);
     
     
 insert into mensaje(nombre, descripcion) values ('saludo', 'bienvenidos estudiantes al curso!');
