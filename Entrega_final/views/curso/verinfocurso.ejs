@@ -40,7 +40,7 @@
       <% })%>
     </tbody>
   </table>
-  <h1>Listado de Tareas</h1>
+  <h1>Tareas</h1>
   <table class="table table-bordered">
     <thead>
       <tr>
@@ -57,6 +57,44 @@
         <td><%= tarea.descripcion %></td>
         <td><%= tarea.fecha_entrega %></td>
         <td><%= tarea.archivo %></td>
+      </tr>
+      <% })%>
+    </tbody>
+  </table>
+  <h1>Materiales</h1>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Archivo</th>
+        <th>Descripcion</th>
+        <th>Fecha de Creacion</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% material.forEach(material=> { %>
+      <tr>
+        <td><%= material.nombre_archivo %></td>
+        <td><%= material.descripcion %></td>
+        <td><%= material.fecha_creacion %></td>
+      </tr>
+      <% })%>
+    </tbody>
+  </table>
+  <h1>Foros</h1>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Descripcion</th>
+        <th>Fecha de Creacion</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% foro.forEach(foro=> { %>
+      <tr>
+        <td><%= foro.nombre %></td>
+        <td><%= foro.descripcion %></td>
+        <td><%= foro.fecha_creacion %></td>
       </tr>
       <% })%>
     </tbody>
