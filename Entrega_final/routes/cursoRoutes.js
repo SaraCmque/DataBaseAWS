@@ -59,7 +59,7 @@ router.get("/verinfocurso/:id_info", function (req, res, next) {
     //materialModel.obtenerMateriales(id_info),
     //foroModel.obtenerForos(id_info),
   ])
-    .then(([curso, estudiante]) => {
+    .then(([curso, estudiante, tarea]) => {
       res.render("curso/verinfocurso", {
         curso: curso,
         estudiante: estudiante,
