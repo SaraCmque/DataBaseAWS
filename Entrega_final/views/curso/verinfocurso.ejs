@@ -23,5 +23,22 @@
       <% })%>
     </tbody>
   </table>
+  
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>ID Estudiante</th>
+        <th>Nombre completo</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% estudiante.forEach(estudiante=> { %>
+      <tr>
+        <td><%= estudiante.id_info %></td>
+        <td><%= estudiante.nombre_completo %></td>
+      </tr>
+      <% })%>
+    </tbody>
+  </table>
 </div>
 <%- include("../footer"); %>
