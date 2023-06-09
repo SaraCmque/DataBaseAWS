@@ -34,8 +34,8 @@
     <tbody>
       <% curso.forEach(curso=> { %>
       <tr>
-        <td><%= curso.id_info %></td>
-        <td><%= curso.nombre_completo %></td>
+        <td><%= curso.estudiante.id_estudiante %></td>
+        <td><%= curso.estudiante.nombre_completo %></td>
       </tr>
       <% })%>
     </tbody>
