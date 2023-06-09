@@ -47,14 +47,14 @@ router.get("/verinfocurso/:id_info", function (req, res, next) {
     });
 });
 */
-router.get("/verInfoCurso/:id_info", function (req, res, next) {
+router.get("/verinfocurso/:id_info", function (req, res, next) {
   const id_info = req.params.id_info;
   Promise.all([
     cursoModel.obtenerDetalles(id_info),
     estudianteModel.obtenerEstudiantes(id_info), // Replace with the actual function to fetch data for the second table
   ])
     .then(([curso, estudiante]) => {
-      res.render("curso/verInfoCurso", {
+      res.render("curso/verinfocurso", {
         curso: curso,
         estudiante: estudiante,
       });
