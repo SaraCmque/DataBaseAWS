@@ -70,7 +70,7 @@ obtenerTareas(id_info) {
   obtenerForos(id_info) {
     return new Promise((resolve, reject) => {
       conexion.query(
-        `select distinct nombre, descripcion, fecha_creacion from foro f inner join info_curso i
+        `select distinct f.nombre, f.descripcion, f.fecha_creacion from foro f inner join info_curso i
 on f.id_info = i.id_info where i.id_info = ?`,
         [id_info],
         (err, resultados) => {
