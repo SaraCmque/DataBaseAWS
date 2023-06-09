@@ -31,4 +31,19 @@ router.get("/verinfocurso/:id_info", function (req, res, next) {
     });
 });
 
+router.get("/verinfocurso/:id_info", function (req, res, next) {
+  cursoModel
+    .obtenerEstudiantes(req.params.id_info)
+    .then((estudiante) => {
+      if (estudiante) {
+        res.render("curso/verinfocurso", {
+          estudiante: estudiante,
+        });
+      }
+    })
+    .catch((err) => {
+      return res.status(500).send("Error obteniendo Estudiantes");
+    });
+});
+
 module.exports = router;
