@@ -41,4 +41,17 @@ from nodo_entrega3.curso c inner join nodo_entrega3.info_curso i on c.id_curso =
       );
     });
   },
+  
+  obtenerMateriales(id_info) {
+    return new Promise((resolve, reject) => {
+      conexion.query(
+        'select distinct m.nombre_archivo, m.descripcion, m.fecha_creacion from material m inner join info_curso ic on ic.id_info = m.id_info where r.id_info = ?',
+        [id_info],
+        (err, resultados) => {
+          if (err) reject(err);
+            else resolve(resultados);
+        }
+      );
+  });
+},
 };
