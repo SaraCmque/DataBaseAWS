@@ -3,13 +3,34 @@
   <head>
     <title><%= title %></title>
     <link rel="stylesheet" href="/stylesheets/style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      .custom-pink-button {
+        background-color: #d63384; /* Replace with the appropriate HEX code for pink */
+        border-color: #d63384;
+      }
+    </style>
   </head>
   <body>
     <h1><%= title %></h1>
     <p>
       Estás mirando la página de inicio, navega a
-      <a href="/profesor">/profesor</a>
-      para ver la app web
+      <a class="btn btn-primary" href="/profesor" role="button">profesor</a>
+      o
+      <a class="btn btn-primary custom-pink-button" href="/cursos" role="button"
+        >cursos</a
+      >
+      para ver el listado de profesores y cursos
     </p>
   </body>
 </html>
