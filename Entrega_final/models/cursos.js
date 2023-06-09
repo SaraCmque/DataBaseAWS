@@ -54,4 +54,33 @@ from nodo_entrega3.curso c inner join nodo_entrega3.info_curso i on c.id_curso =
       );
   });
 },
+obtenerTareas(id_info) {
+    return new Promise((resolve, reject) => {
+      conexion.query(
+        `select nombre_tarea, descripcion, fecha_entrega, archivo from tarea t inner join info_curso i
+        on t.id_info = i.id_info where i.id_info = ?`,
+        [id_info],
+        (err, resultados) => {
+          if (err) reject(err);
+          else resolve(resultados);
+        }
+      );
+    });
+  },
 };
+
+obtenerForos(id_info) {
+    return new Promise((resolve, reject) => {
+      conexion.query(
+        `select distinct nombre, descripcion, fecha_creacion from foro f inner join info_curso i
+on f.id_info = i.id_info where i.id_info = ?`,
+        [id_info],
+        (err, resultados) => {
+          if (err) reject(err);
+          else resolve(resultados);
+        }
+      );
+    });
+  },
+};
+
