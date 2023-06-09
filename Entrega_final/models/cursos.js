@@ -67,9 +67,7 @@ obtenerTareas(id_info) {
       );
     });
   },
-};
-
-obtenerForos(id_info) {
+  obtenerForos(id_info) {
     return new Promise((resolve, reject) => {
       conexion.query(
         `select distinct nombre, descripcion, fecha_creacion from foro f inner join info_curso i
