@@ -34,10 +34,10 @@ router.get("/verinfocurso/:id_info", function (req, res, next) {
 router.get("/verinfocurso/:id_info", function (req, res, next) {
   cursoModel
     .obtenerEstudiantes(req.params.id_info)
-    .then((estudiante) => {
-      if (estudiante) {
+    .then((curso) => {
+      if (curso) {
         res.render("curso/verinfocurso", {
-          estudiante: estudiante,
+          curso: curso,
         });
       }
     })
