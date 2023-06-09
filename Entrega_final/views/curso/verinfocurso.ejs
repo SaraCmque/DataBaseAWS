@@ -55,7 +55,7 @@
       <tr>
         <td><%= tarea.nombre_tarea %></td>
         <td><%= tarea.descripcion %></td>
-        <td><%= tarea.fecha_entrega %></td>
+        <td><%= tarea.fecha_entrega.toLocaleDateString('Es-es', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' }) %></td>
         <td><%= tarea.archivo %></td>
       </tr>
       <% })%>
@@ -75,7 +75,7 @@
       <tr>
         <td><%= material.nombre_archivo %></td>
         <td><%= material.descripcion %></td>
-        <td><%= material.fecha_creacion %></td>
+        <td><%= material.fecha_creacion.toLocaleDateString('Es-es', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' }) %></td>
       </tr>
       <% })%>
     </tbody>
@@ -94,7 +94,7 @@
       <tr>
         <td><%= foro.nombre %></td>
         <td><%= foro.descripcion %></td>
-        <td><%= foro.fecha_creacion %></td>
+        <td><%= foro.fecha_creacion.toLocaleDateString('Es-es', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' }) %></td>
       </tr>
       <% })%>
     </tbody>
