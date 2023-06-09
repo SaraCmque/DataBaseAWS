@@ -28,4 +28,17 @@ from nodo_entrega3.curso c inner join nodo_entrega3.info_curso i on c.id_curso =
       );
     });
   },
+  obtenerEstudiantes(id_info) {
+    return new Promise((resolve, reject) => {
+      conexion.query(
+        `select distinct r.id_estudiante, nombre_completo from registro_estu r inner join estudiante e
+        on r.id_estudiante = e.id_estudiante where r.id_curso = ?`,
+        [id_info],
+        (err, resultados) => {
+          if (err) reject(err);
+          else resolve(resultados);
+        }
+      );
+    });
+  },
 };
