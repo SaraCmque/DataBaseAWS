@@ -41,13 +41,12 @@ module.exports = {
     return new Promise((resolve, reject) => {
       conexion.query(
         `update profesor
-            set doc_id = ?,
-            nombre_completo = ?,
+            set nombre_completo = ?,
             email = ?,
             telefono = ?,
             contrasena = ?,
             where doc_id = ?`,
-        [doc_id, nombre_completo, email, telefono, contrasena],
+        [nombre_completo, email, telefono, contrasena, doc_id],
         (err) => {
           if (err) reject(err);
           else resolve();
