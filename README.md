@@ -6,7 +6,7 @@ Este proyecto es una base de datos alojada en AWS utilizando una instancia del s
 - Interfaz SQL: La base de datos permite interactuar mediante consultas SQL estándar para insertar, actualizar y consultar datos. Se realizó el desarrollo web utilizando Node.js y JavaScript, con la implementación de una API llamada Express. Además, se crea una base de datos en MongoDB y se desarrolla una API adicional para realizar consultas, inserciones y actualizaciones a dicha base de datos.
 - API con Express: Se implementa una API utilizando el framework Express, permitiendo el manejo de rutas, peticiones y respuestas HTTP.
 
-#Indicaciones
+# Indicaciones
 - La Base de Datos SQL se encuentra en la carpeta 'Entrega_final', en el archivo 'esquema.sql' al igual que el desarrollo web de la pagina.
 - La implementacion en mongodb se encuentra en el archivo llamado 'nodejs-mongodb-nodo-final'
 
