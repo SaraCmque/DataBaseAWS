@@ -43,7 +43,7 @@ module.exports = {
             set nombre_completo = ?,
             email = ?,
             telefono = ?,
-            contrasena = ?,
+            contrasena = ?
             where doc_id = ?`,
         [nombre_completo, email, telefono, contrasena, doc_id],
         (err) => {
