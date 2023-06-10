@@ -60,7 +60,7 @@ router.get("/editar/:doc_id", function (req, res, next) {
     });
 });
 router.post("/actualizar/", function (req, res, next) {
-  const { doc_id, nombre, email, telefono, area_p, area_a, contraseña } =
+  const { doc_id, nombre_completo, email, telefono, contrasena } =
     req.body;
   if (!doc_id || !nombre_completo || !email || !telefono || !contrasena) {
     return res.status(500).send("No hay suficientes datos");
