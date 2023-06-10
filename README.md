@@ -10,4 +10,10 @@ Este proyecto es una base de datos alojada en AWS utilizando una instancia del s
 - La Base de Datos SQL se encuentra en la carpeta 'Entrega_final', en el archivo 'esquema.sql' al igual que el desarrollo web de la pagina.
 - La implementacion en mongodb se encuentra en el archivo llamado 'nodejs-mongodb-nodo-final'
 
+# Rutas
+para ver los datos de mongodb:
+- de la tabla Teachers:
+  - <direccion_ip>/nodo/Teachers, <direccion_ip>/nodo/TeacherInsert, <direccion_ip>/nodo/TeacherUpdate:id, <direccion_ip>/nodo/TeacherDelete:id
+- de la tabla Students:
+  - <direccion_ip>/nodo/Students, <direccion_ip>/nodo/StudentInsert, <direccion_ip>/nodo/StudentUpdate/:id, <direccion_ip>/nodo/StudentDelete/:id
 
