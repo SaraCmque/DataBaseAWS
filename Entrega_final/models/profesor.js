@@ -9,8 +9,7 @@ module.exports = {
         (err, resultados) => {
           if (err) reject(err);
           else resolve(resultados.insertId);
-        }
-      );
+        });
     });
   },
 
